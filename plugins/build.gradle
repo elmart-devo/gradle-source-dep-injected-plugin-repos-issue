@@ -4,8 +4,9 @@ plugins {
 }
 
 repositories {
-  // Configure a repo here and see it ignored
-  // (only gradle plugin central seems to be searched)
+  // Configure a private repo here.
+  // It will be ignored, even if it's correctly configured, as println
+  // statements at the end of the file will show.
   //
   // maven {
     // name "repoName"
@@ -18,7 +19,11 @@ repositories {
 }
 
 dependencies {
-  // Add some dep here that is in the repo defined above and see it not found
+  // Add some dep here that you know is in the private repo but not in
+  // Gradle Plugin Portal (which includes jcenter, which includes mavencentral).
+  // Dependency will not be found, as it seems above repo definitio is ignored
+  // and only Gradle Plugin Central is searched, as the error message will show.
+  //
   // implementation "some.package:some-artifact:some-version"
 }
 
