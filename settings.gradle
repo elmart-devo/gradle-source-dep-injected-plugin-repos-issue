@@ -8,7 +8,6 @@
  */
 
 rootProject.name = 'gradleissue'
-include('lib')
 
 sourceControl {
   gitRepository("https://github.com/elmart-devo/dummylib.git") {
