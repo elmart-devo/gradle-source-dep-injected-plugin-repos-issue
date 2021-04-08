@@ -1,7 +1,11 @@
 rootProject.name = 'gradleissue'
+includeBuild 'plugins'
 
 sourceControl {
   gitRepository("https://github.com/elmart-devo/dummylib.git") {
     producesModule("com.devo.elmart:dummylib")
+    plugins {
+      id 'dummylib-build'
+    }
   }
 }

@@ -1,0 +1,36 @@
+plugins {
+  id 'groovy'
+  id 'java-gradle-plugin'
+}
+
+repositories {
+  // Configure a repo here and see it ignored
+  // (only gradle plugin central seems to be searched)
+  //
+  // maven {
+    // name "repoName"
+    // url "https://somewhere.whatever/repository/path"
+    // credentials {
+      // username 'username'
+      // password 'XXXXXXX'
+    // }
+  // }
+}
+
+dependencies {
+  // Add some dep here that is in the repo defined above and see it not found
+  // implementation "some.package:some-artifact:some-version"
+}
+
+gradlePlugin {
+  plugins {
+    "dummylib-build" {
+      id = "dummylib-build"
+      implementationClass = "com.devo.elmart.dummylib.DummylibBuildPlugin"
+    }
+  }
+}
+
+println "---- PROJECT ----" + project.name
+println "---- NORMAL REPOS ----" + project.repositories.collect {it.name}
+println "---- PLUGIN MANAGEMENT REPOS ----" + gradle.settings.pluginManagement.repositories.collect {it.name}

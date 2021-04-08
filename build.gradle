@@ -5,5 +5,5 @@ plugins {
 
 dependencies {
     // Source dependency from https://github.com/elmart-devo/dummylib.git
-    implementation "com.devo.elmart:dummylib:v5.0.0"
+    implementation "com.devo.elmart:dummylib:v6.0.0"
 }
