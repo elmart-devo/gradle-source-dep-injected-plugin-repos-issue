@@ -8,7 +8,8 @@ makes so that repositories configured for plugin are ignored.
 - Clone this repo: `git clone https://github.com/elmart-devo/gradleissue.git`.
 - Go into cloned dir: `cd gradleissue`
 - Check you can build ok: `./gradlew --console verbose build`
-- Now edit `plugins/build.gradle` and define a repo and a dependency.
+- Now edit `plugins/build.gradle` and define a repo and a dependency that you
+  know is in that repo, but not in Gradle Plugin Portal/jcenter/mavencentral.
 - Build again. It will fail to find the dep, and will report having searched
   only in Gradle Plugin Portal `https://plugins.gradle.org`, ignoring the repo
   you have defined.
