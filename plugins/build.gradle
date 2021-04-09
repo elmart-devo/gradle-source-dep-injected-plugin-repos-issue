@@ -4,27 +4,17 @@ plugins {
 }
 
 repositories {
-  // Configure a private repo here.
-  // It will be ignored, even if it's correctly configured, as println
-  // statements at the end of the file will show.
-  //
-  // maven {
-    // name "repoName"
-    // url "https://somewhere.whatever/repository/path"
-    // credentials {
-      // username 'username'
-      // password 'XXXXXXX'
-    // }
-  // }
+  // This repo will be ignored, even if it's correctly configured, as println
+  // statements at the end of the file show in the build output.
+  maven {
+    name "atlassian-public"
+    url "https://packages.atlassian.com/content/repositories/atlassian-public/"
+  }
 }
 
 dependencies {
-  // Add some dep here that you know is in the private repo but not in
-  // Gradle Plugin Portal (which includes jcenter, which includes mavencentral).
-  // Dependency will not be found, as it seems above repo definitio is ignored
-  // and only Gradle Plugin Central is searched, as the error message will show.
-  //
-  // implementation "some.package:some-artifact:some-version"
+  // This dep will not be found, even if it is within the above defined repo.
+  implementation "com.atlassian.activeobjects:activeobjects-confluence-spi:3.3.1."
 }
 
 gradlePlugin {
