@@ -6,7 +6,17 @@ import org.gradle.api.*
 class DummylibBuildPlugin implements Plugin<Settings> {
   void apply(Settings settings) {
     settings.with {
+      pluginManagement {
+        repositories {
+          maven {
+            name "atlassian-public"
+            url "https://packages.atlassian.com/content/repositories/atlassian-public/"
+          }
+        }
+      }
+
       rootProject.name = 'dummylib'
+
       gradle.rootProject {
         apply plugin: 'java-library'
 

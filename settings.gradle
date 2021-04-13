@@ -1,3 +1,12 @@
+pluginManagement {
+  repositories {
+    maven {
+      name "atlassian-public"
+      url "https://packages.atlassian.com/content/repositories/atlassian-public/"
+    }
+  }
+}
+
 rootProject.name = 'gradleissue'
 includeBuild 'plugins'
 
