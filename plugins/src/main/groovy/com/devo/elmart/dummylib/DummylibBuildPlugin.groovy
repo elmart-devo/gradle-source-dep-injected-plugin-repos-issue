@@ -9,8 +9,8 @@ class DummylibBuildPlugin implements Plugin<Settings> {
       pluginManagement {
         repositories {
           maven {
-            name "atlassian-public"
-            url "https://packages.atlassian.com/content/repositories/atlassian-public/"
+            name "spring-plugins-release"
+            url "https://repo.spring.io/plugins-release/"
           }
         }
       }

@@ -7,14 +7,14 @@ repositories {
   // This repo will be ignored, even if it's correctly configured, as println
   // statements at the end of the file show in the build output.
   maven {
-    name "atlassian-public"
-    url "https://packages.atlassian.com/content/repositories/atlassian-public/"
+    name "spring-plugins-release"
+    url "https://repo.spring.io/plugins-release/"
   }
 }
 
 dependencies {
   // This dep will not be found, even if it is within the above defined repo.
-  implementation "com.atlassian.activeobjects:activeobjects-confluence-spi:3.3.1."
+  implementation "cglib:cglib-nodep:3.0"
 }
 
 gradlePlugin {
